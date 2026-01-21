@@ -3,7 +3,7 @@
   connection: local
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: ami-09c813fb71547fc4f
+    sg_id: sg-0303a0e47aba592a6
     domain_name: daws-86.shop
 
   tasks:
