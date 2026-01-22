@@ -1,0 +1,12 @@
+- name: copy {{ component }} services
+  ansible.builtin.template: 
+    src: "{{ component }}.service.j2"
+    dest: "/etc/systemd/system/{{ component }}.service.j2" 
+    notify: daemon_reload
+  
+- name: start service and daemon_reload
+  ansible.builtin.systemd_service:
+    name: "{{ component }}"
+    state: started
+    enabled: true
+    daemon_reload: true
