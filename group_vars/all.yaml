@@ -4,3 +4,5 @@ CATALOGUE_HOST: catalogue-{{ env }}.daws-86.shop
 CART_HOST: cart-{{ env }}.daws-86.shop
 MYSQL_HOST: mysql-{{ env }}.daws-86.shop
 RABBITMQ_HOST: rabbitmq-{{ env }}.daws-86.shop
+SHIPPING_HOST: shipping-{{ env }}.daws86s.shop
+PAYMENT_HOST: payment - {{ env }}.daws86s.shop
