@@ -18,12 +18,12 @@
       dest: /etc/yum.repos.d/mongodb.repo
 
   - name: install mongodb client
-    ansible.buitin.package:
+    ansible.builtin.package:
       name: mongodb-mongosh
       state: present
 
   - name: check if data related to product is exits in db or not
-    ansible.builtin.command: mongosh mongodb.daws86s.fun --quiet --eval "db.getMongo().getDBNames().indexOf('"{{ component }}"')"
+    ansible.builtin.command: mongosh {{ MONGODB_HOST }} --quiet --eval "db.getMongo().getDBNames().indexOf('"{{ component }}"')"
     register: "{{ component }}_output"
 
   - name: if not exits load data into product
