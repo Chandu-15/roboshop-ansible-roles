@@ -1,3 +1,8 @@
+  - name: remove accidental template files from destination
+    ansible.builtin.file:
+      path: "/etc/systemd/system/{{ component }}.service.j2"
+      state: absent
+  
   - name: copy {{ component }} services
     ansible.builtin.template: 
       src: "{{ component }}.service.j2"
