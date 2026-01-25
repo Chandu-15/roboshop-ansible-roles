@@ -6,7 +6,7 @@
 - name:  java_setup
   ansible.builtin.import_role:
     name: common
-    task_from: java_setup.yaml
+    tasks_from: java_setup.yaml
 
 - name : install python libraries
   ansible.builtin.pip:
