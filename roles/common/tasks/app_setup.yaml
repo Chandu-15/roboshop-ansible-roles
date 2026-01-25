@@ -3,7 +3,7 @@
       name: Roboshop
       comments: create Roboshop System user
       system: true
-      shell: sbin/nologin
+      shell: /sbin/nologin
       home: /app
 
   - name: remove app directory if already exists
