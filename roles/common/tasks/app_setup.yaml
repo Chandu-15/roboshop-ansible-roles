@@ -1,10 +1,11 @@
   - name: create system user
     ansible.builtin.user:
-      name: Roboshop
+      name: roboshop
       comment: create Roboshop System user
       system: true
       shell: /sbin/nologin
       home: /app
+
 
   - name: remove app directory if already exists
     ansible.builtin.file: 
@@ -15,6 +16,13 @@
     ansible.builtin.file:
       state: directory 
       path: /app
+
+  - name: Change ownership of /app
+    ansible.builtin.file:
+      path: /app
+      owner: roboshop
+      group: roboshop
+      recurse: yes
 
   - name: download code from url
     ansible.builtin.get_url:
