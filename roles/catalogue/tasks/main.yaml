@@ -24,11 +24,11 @@
 
   - name: check if data related to product is exits in db or not
     ansible.builtin.command: mongosh {{ MONGODB_HOST }} --quiet --eval "db.getMongo().getDBNames().indexOf('"{{ component }}"')"
-    register: "{{ component }}_output"
+    register: "catalogue_output"
 
   - name: if not exits load data into product
     ansible.builtin.command: mongosh --host {{ MONGODB_HOST }} > /app/db/master-data.js
-    when: "{{ component }}_output.stdout | int < 0"
+    when: "catalogue_output.stdout | int < 0"
 
   - name: import_role and do service setup
     ansible.builtin.import_role:
