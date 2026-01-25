@@ -8,7 +8,7 @@
   - name:  nodejs_setup
     ansible.builtin.include_role:
       name: common
-      task_from: nodejs_setup.yaml
+      tasks_from: nodejs_setup.yaml
     tags:
         - deployment
 
