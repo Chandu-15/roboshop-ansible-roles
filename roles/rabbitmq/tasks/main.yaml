@@ -14,8 +14,8 @@
     state: started
 - name: set permissions to use
   community.rabbitmq.rabbitmq_user:
-    user: roboshop
-    password: roboshop@123
+    user: "{{ rabbitmq_user }}"
+    password: "{{ rabbitmq_password }}"
     permissions:
       - vhost: /
         configure_priv : .*
