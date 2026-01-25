@@ -10,4 +10,4 @@
   - name: import_role and do service setup
     ansible.builtin.import_role:
       name: common
-      tasks_from: service_setup
+      tasks_from: services_setup
