@@ -12,7 +12,7 @@
   ansible.builtin.pip:
     name: "{{ item }}"
     executable: pip3.9
-    loop:
+  loop:
      - cryptography
      - PyMySQL
 
@@ -25,7 +25,7 @@
     login_password: RoboShop@1
     login_host: {{ MYSQL_HOST }}
     target: "{{ item }}"
-    loop:
+  loop:
       - /app/db/schema.sql
       - /app/db/app-user.sql 
       - /app/db/master-data.sql
@@ -33,4 +33,4 @@
 - name: import_role and do service setup
   ansible.builtin.import_role:
     name: common
-    tasks_from: service_setup
+    tasks_from: services_setup
