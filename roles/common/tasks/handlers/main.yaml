@@ -1,3 +1,0 @@
-  - name: daemonreload
-    ansible.builtin.systemd_service:
-      daemon_reload: true
