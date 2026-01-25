@@ -17,12 +17,6 @@
       state: directory 
       path: /app
 
-  - name: Change ownership of /app
-    ansible.builtin.file:
-      path: /app
-      owner: roboshop
-      group: roboshop
-      recurse: yes
 
   - name: download code from url
     ansible.builtin.get_url:
@@ -34,4 +28,11 @@
       src: /tmp/{{ component }}.zip
       dest: /app
       remote_src: yes
+      
+  - name: Change ownership of /app
+    ansible.builtin.file:
+      path: /app
+      owner: roboshop
+      group: roboshop
+      recurse: yes
 
